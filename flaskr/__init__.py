@@ -140,6 +140,14 @@ def create_app(test_config=None):
 
     # 认证蓝图将包括注册新用户、登录和注销视图。
     # --> auth.py
+    
+    ##########
+    # 博客蓝图
+    ##########
+    
+    from . import blog
+    app.register_blueprint(blog.bp)
+    app.add_url_rule('/', endpoint='index')
 
     return app
 
